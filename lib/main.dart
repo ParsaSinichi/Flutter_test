@@ -26,29 +26,32 @@ class _CalculatorState extends State<Calculator> {
         ),
         body: Center(
           
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                 setState(() {
-                    butn_name="i got changed and i went to the home icon";
-                      currentIndex=0;
-                 });
-                },
-                child:  Text(butn_name),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                 setState(() {
-                    butn2_name="i got changed and i went to the setting icon";
-                    currentIndex=1;
-                 });
-                },
-                child:  Text(butn2_name),
-              ),
-            ],
+          child: SizedBox(
+            
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                   setState(() {
+                      butn_name="i got changed and i went to the home icon";
+                        currentIndex=0;
+                   });
+                  },
+                  child:  Text(butn_name),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                   setState(() {
+                      butn2_name="i got changed and i went to the setting icon";
+                      currentIndex=1;
+                   });
+                  },
+                  child:  Text(butn2_name),
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
