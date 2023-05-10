@@ -26,13 +26,19 @@ class _CalculatorState extends State<Calculator> {
         ),
         body: Center(
           
-          child: SizedBox(
-            
-            child: Column(
+          child: currentIndex==0 ? Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.red,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ElevatedButton(
+                  style:ElevatedButton.styleFrom(
+                    onPrimary: Colors.red,//this is for the text
+                    primary: Colors.black //this is for the background color
+                  ) ,
                   onPressed: () {
                    setState(() {
                       butn_name="i got changed and i went to the home icon";
@@ -42,6 +48,10 @@ class _CalculatorState extends State<Calculator> {
                   child:  Text(butn_name),
                 ),
                 ElevatedButton(
+                  style:ElevatedButton.styleFrom(
+                    onPrimary: Color.fromARGB(187, 216, 216, 218),//this is for the text
+                    primary: Color.fromARGB(255, 46, 1, 119) //this is for the background color
+                  ) ,
                   onPressed: () {
                    setState(() {
                       butn2_name="i got changed and i went to the setting icon";
@@ -52,7 +62,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
               ],
             ),
-          ),
+          ):SizedBox(),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items:const [//creating different items for navbar
@@ -63,6 +73,7 @@ class _CalculatorState extends State<Calculator> {
           onTap: (int index){//if we click on the other icon, it will changes to clicked icon
             setState(() {
               currentIndex=index;
+              
             });
 
           },
